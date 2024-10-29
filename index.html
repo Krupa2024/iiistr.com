@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment Verification</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .hidden { display: none; }
+        .info-box { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Enrollment Number</h2>
+    <div id="enrollment-section">
+        <input type="text" id="enrollment" placeholder="Enter enrollment number" />
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="info-section" class="hidden">
+        <h2>Details</h2>
+        <div class="info-box">
+            <p><strong>Name:</strong> Nagarjuna M</p>
+            <p><strong>Branch:</strong> BCA</p>
+            <p><strong>Session:</strong> 2006-2009</p>
+            <p><strong>Roll No:</strong> 66NMBCOM2006</p>
+            <p><strong>Total Marks Obtained:</strong> 2483</p>
+            <p><strong>PC/TC:</strong> Issued</p>
+            <p><strong>Date:</strong> 26.06.2009</p>
+        </div>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function login() {
+            const enrollmentNumber = document.getElementById('enrollment').value;
+
+            // Basic enrollment check
+            if (enrollmentNumber === "66NMBCOM2006") {
+                document.getElementById('enrollment-section').classList.add('hidden');
+                document.getElementById('info-section').classList.remove('hidden');
+            } else {
+                alert('Invalid enrollment number');
+            }
+        }
+
+        function logout() {
+            document.getElementById('enrollment-section').classList.remove('hidden');
+            document.getElementById('info-section').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
